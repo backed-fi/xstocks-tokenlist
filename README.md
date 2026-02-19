@@ -1,1 +1,2 @@
-# xStocks Token List
+# Cowswap xStocks Token List
+
