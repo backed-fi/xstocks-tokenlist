@@ -2,8 +2,8 @@
     "name": "xStocks Token List",
     "timestamp": "2026-02-18T00:00:00.000000Z",
     "version": {
-        "major": 1,
-        "minor": 0,
+        "major": 2,
+        "minor": 1,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -16,33 +16,6 @@
     "tokens": [
         {
             "chainId": 1,
-            "address": "0x4833e7f4f0460f4b72a3a5879a6c9841bcc5b58b",
-            "name": "iShares Silver Trust xStock",
-            "symbol": "SLVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x4833e7f4f0460f4b72a3a5879a6c9841bcc5b58b",
-            "name": "iShares Silver Trust xStock",
-            "symbol": "SLVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x4833e7f4f0460f4b72a3a5879a6c9841bcc5b58b",
-            "name": "iShares Silver Trust xStock",
-            "symbol": "SLVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0x96702be57cd9777f835117a809c7124fe4ec989a",
             "name": "Meta xStock",
             "symbol": "METAx",
@@ -115,33 +88,6 @@
         },
         {
             "chainId": 1,
-            "address": "0x60ae7d760a1c7b528c0384bc945fadf1438f47a5",
-            "name": "Bitgo xStock",
-            "symbol": "BTGOx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTGOx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x60ae7d760a1c7b528c0384bc945fadf1438f47a5",
-            "name": "Bitgo xStock",
-            "symbol": "BTGOx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTGOx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x60ae7d760a1c7b528c0384bc945fadf1438f47a5",
-            "name": "Bitgo xStock",
-            "symbol": "BTGOx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTGOx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0x2363fd1235c1b6d3a5088ddf8df3a0b3a30c5293",
             "name": "Visa xStock",
             "symbol": "Vx",
@@ -210,105 +156,6 @@
             "symbol": "MRKx",
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MRKx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x89bab39d627a9e34f0dc782c53457e80ee8fb9d9",
-            "name": "Global X Copper Miners xStock",
-            "symbol": "COPXx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COPXx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x89bab39d627a9e34f0dc782c53457e80ee8fb9d9",
-            "name": "Global X Copper Miners xStock",
-            "symbol": "COPXx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COPXx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x89bab39d627a9e34f0dc782c53457e80ee8fb9d9",
-            "name": "Global X Copper Miners xStock",
-            "symbol": "COPXx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COPXx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x521860bb5df5468358875266b89bfe90d990c6e7",
-            "name": "DFDV xStock",
-            "symbol": "DFDVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DFDVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x521860bb5df5468358875266b89bfe90d990c6e7",
-            "name": "DFDV xStock",
-            "symbol": "DFDVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DFDVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0x521860bb5df5468358875266b89bfe90d990c6e7",
-            "name": "DFDV xStock",
-            "symbol": "DFDVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DFDVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x521860bb5df5468358875266b89bfe90d990c6e7",
-            "name": "DFDV xStock",
-            "symbol": "DFDVx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DFDVx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0xbee6b69345f376598fe16abd5592c6f844825e66",
-            "name": "OPEN xStock",
-            "symbol": "OPENx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/OPENx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0xbee6b69345f376598fe16abd5592c6f844825e66",
-            "name": "OPEN xStock",
-            "symbol": "OPENx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/OPENx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0xbee6b69345f376598fe16abd5592c6f844825e66",
-            "name": "OPEN xStock",
-            "symbol": "OPENx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/OPENx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0xbee6b69345f376598fe16abd5592c6f844825e66",
-            "name": "OPEN xStock",
-            "symbol": "OPENx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/OPENx.png",
             "tags": ["xStocks"]
         },
         {
@@ -457,60 +304,6 @@
         },
         {
             "chainId": 1,
-            "address": "0x0ebe5fad0998765187fc695b75d4115c27c953a1",
-            "name": "KRAQ xStock",
-            "symbol": "KRAQx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/KRAQx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x0ebe5fad0998765187fc695b75d4115c27c953a1",
-            "name": "KRAQ xStock",
-            "symbol": "KRAQx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/KRAQx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x0ebe5fad0998765187fc695b75d4115c27c953a1",
-            "name": "KRAQ xStock",
-            "symbol": "KRAQx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/KRAQx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x05473cea3774d898c7b6dda21e1876d6bca7277b",
-            "name": "abrdn Physical Palladium Shares xStock",
-            "symbol": "PALLx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PALLx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x05473cea3774d898c7b6dda21e1876d6bca7277b",
-            "name": "abrdn Physical Palladium Shares xStock",
-            "symbol": "PALLx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PALLx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x05473cea3774d898c7b6dda21e1876d6bca7277b",
-            "name": "abrdn Physical Palladium Shares xStock",
-            "symbol": "PALLx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PALLx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0xeedb0273c5af792745180e9ff568cd01550ffa13",
             "name": "Exxon Mobil xStock",
             "symbol": "XOMx",
@@ -619,60 +412,6 @@
         },
         {
             "chainId": 1,
-            "address": "0xe0f324a026ca55492637009d98034103db4a6967",
-            "name": "Brera xStock",
-            "symbol": "SLMTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLMTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0xe0f324a026ca55492637009d98034103db4a6967",
-            "name": "Brera xStock",
-            "symbol": "SLMTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLMTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0xe0f324a026ca55492637009d98034103db4a6967",
-            "name": "Brera xStock",
-            "symbol": "SLMTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SLMTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x8e9e4a8d7f1c65dcb42d9103832b27e75946055d",
-            "name": "abrdn Physical Platinum Shares xStock",
-            "symbol": "PPLTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PPLTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x8e9e4a8d7f1c65dcb42d9103832b27e75946055d",
-            "name": "abrdn Physical Platinum Shares xStock",
-            "symbol": "PPLTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PPLTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x8e9e4a8d7f1c65dcb42d9103832b27e75946055d",
-            "name": "abrdn Physical Platinum Shares xStock",
-            "symbol": "PPLTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PPLTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0x36c424a6ec0e264b1616102ad63ed2ad7857413e",
             "name": "PepsiCo xStock",
             "symbol": "PEPx",
@@ -777,42 +516,6 @@
             "symbol": "TQQQx",
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TQQQx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x03183ce31b1656b72a55fa6056e287f50c35bbeb",
-            "name": "Accenture xStock",
-            "symbol": "ACNx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACNx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x03183ce31b1656b72a55fa6056e287f50c35bbeb",
-            "name": "Accenture xStock",
-            "symbol": "ACNx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACNx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0x03183ce31b1656b72a55fa6056e287f50c35bbeb",
-            "name": "Accenture xStock",
-            "symbol": "ACNx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACNx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x03183ce31b1656b72a55fa6056e287f50c35bbeb",
-            "name": "Accenture xStock",
-            "symbol": "ACNx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACNx.png",
             "tags": ["xStocks"]
         },
         {
@@ -1069,42 +772,6 @@
         },
         {
             "chainId": 1,
-            "address": "0x766b0cd6ed6d90b5d49d2c36a3761e9728501ba9",
-            "name": "Home Depot xStock",
-            "symbol": "HDx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HDx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x766b0cd6ed6d90b5d49d2c36a3761e9728501ba9",
-            "name": "Home Depot xStock",
-            "symbol": "HDx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HDx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0x766b0cd6ed6d90b5d49d2c36a3761e9728501ba9",
-            "name": "Home Depot xStock",
-            "symbol": "HDx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HDx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x766b0cd6ed6d90b5d49d2c36a3761e9728501ba9",
-            "name": "Home Depot xStock",
-            "symbol": "HDx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HDx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0xdcc1a2699441079da889b1f49e12b69cc791129b",
             "name": "Coca-Cola xStock",
             "symbol": "KOx",
@@ -1141,42 +808,6 @@
         },
         {
             "chainId": 1,
-            "address": "0x0588e851ec0418d660bee81230d6c678daf21d46",
-            "name": "Medtronic xStock",
-            "symbol": "MDTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MDTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x0588e851ec0418d660bee81230d6c678daf21d46",
-            "name": "Medtronic xStock",
-            "symbol": "MDTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MDTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0x0588e851ec0418d660bee81230d6c678daf21d46",
-            "name": "Medtronic xStock",
-            "symbol": "MDTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MDTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x0588e851ec0418d660bee81230d6c678daf21d46",
-            "name": "Medtronic xStock",
-            "symbol": "MDTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MDTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
             "address": "0x62a48560861b0b451654bfffdb5be6e47aa8ff1b",
             "name": "Honeywell xStock",
             "symbol": "HONx",
@@ -1209,78 +840,6 @@
             "symbol": "HONx",
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HONx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0xdadfb355c6110eda0908740d52c834d6c2bcddc7",
-            "name": "Russell 2000 xStock",
-            "symbol": "IWMx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IWMx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0xdadfb355c6110eda0908740d52c834d6c2bcddc7",
-            "name": "Russell 2000 xStock",
-            "symbol": "IWMx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IWMx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0xdadfb355c6110eda0908740d52c834d6c2bcddc7",
-            "name": "Russell 2000 xStock",
-            "symbol": "IWMx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IWMx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0xdadfb355c6110eda0908740d52c834d6c2bcddc7",
-            "name": "Russell 2000 xStock",
-            "symbol": "IWMx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IWMx.png",
             "tags": ["xStocks"]
         },
         {
@@ -1497,42 +1056,6 @@
             "symbol": "VTIx",
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/VTIx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 1,
-            "address": "0xaeb681b69e5094e04d11bcef51a71358a374c3ed",
-            "name": "Bitmine xStock",
-            "symbol": "BMNRx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BMNRx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 42161,
-            "address": "0xaeb681b69e5094e04d11bcef51a71358a374c3ed",
-            "name": "Bitmine xStock",
-            "symbol": "BMNRx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BMNRx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 56,
-            "address": "0xaeb681b69e5094e04d11bcef51a71358a374c3ed",
-            "name": "Bitmine xStock",
-            "symbol": "BMNRx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BMNRx.png",
-            "tags": ["xStocks"]
-        },
-        {
-            "chainId": 57073,
-            "address": "0xaeb681b69e5094e04d11bcef51a71358a374c3ed",
-            "name": "Bitmine xStock",
-            "symbol": "BMNRx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BMNRx.png",
             "tags": ["xStocks"]
         },
         {
@@ -1786,6 +1309,72 @@
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CSCOx.png",
             "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xfebded1b0986a8ee107f5ab1a1c5a813491deceb",
+            "name": "Circle xStock",
+            "symbol": "CRCLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRCLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x90a2a4c76b5d8c0bc892a69ea28aa775a8f2dd48",
+            "name": "SP500 xStock",
+            "symbol": "SPYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x9d275685dc284c8eb1c79f6aba7a63dc75ec890a",
+            "name": "Apple xStock",
+            "symbol": "AAPLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AAPLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xe1385fdd5ffb10081cd52c56584f25efa9084015",
+            "name": "Robinhood xStock",
+            "symbol": "HOODx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOODx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x6d5edeebbc6a4099eb8bb289eb3b80d799f7b28c",
+            "name": "Vanguard Total World xStock",
+            "symbol": "VTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/VTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xf9523e369c5f55ad72dbaa75b0a9b92b3d8b147e",
+            "name": "Novo Nordisk xStock",
+            "symbol": "NVOx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NVOx.png",
+            "tags": [
+                "xStocks"
+            ]
         }
     ]
 }
