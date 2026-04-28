@@ -4,7 +4,7 @@
   "description": "",
   "main": "find-chains.js",
   "scripts": {
-    "update": "node update-tokenlist.js public_atomic_tokenlist.json",
+    "update": "node update-tokenlist.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

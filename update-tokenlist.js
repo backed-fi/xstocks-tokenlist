@@ -3,6 +3,54 @@ const path = require('path');
 const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 
+const API_URL = 'https://api.xstocks.fi/api/v2/public/assets';
+const API_PAGE_SIZE = 100;
+// All xStocks EVM tokens use 18 decimals; the API does not expose this field
+const XSTOCKS_DECIMALS = 18;
+
+async function fetchAllAssets() {
+  const allAssets = [];
+  let page = 0;
+
+  while (true) {
+    const url = `${API_URL}?supportsAtomicSwaps=true&page=${page}&pageSize=${API_PAGE_SIZE}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json();
+    allAssets.push(...data.nodes);
+    if (!data.page.hasNextPage) break;
+    page++;
+  }
+
+  return allAssets;
+}
+
+function transformAssetsToTokens(assets) {
+  const tokens = [];
+
+  for (const asset of assets) {
+    for (const deployment of asset.deployments) {
+      if (!deployment.supportsAtomicSwaps) continue;
+      const chainId = CHAIN_IDS[deployment.network];
+      if (chainId === undefined) continue;
+
+      tokens.push({
+        chainId,
+        address: deployment.address,
+        name: asset.name,
+        symbol: asset.symbol,
+        decimals: XSTOCKS_DECIMALS,
+        logoURI: asset.logo,
+        tags: ['xStocks']
+      });
+    }
+  }
+
+  return tokens;
+}
+
 const TOKENLIST_PATH = path.join(__dirname, 'tokenlist.json');
 const SCHEMA_PATH = path.join(__dirname, 'node_modules/@uniswap/token-lists/src/tokenlist.schema.json');
 
@@ -423,28 +471,27 @@ if (require.main === module) {
   const args = process.argv.slice(2);
 
   if (args.length === 0) {
-    console.log('Usage: node update-tokenlist.js <path-to-new-tokens.json>');
-    console.log('');
-    console.log('The JSON file should contain an array of token objects with:');
-    console.log('  - chainId: number');
-    console.log('  - address: string');
-    console.log('  - name: string');
-    console.log('  - symbol: string');
-    console.log('  - decimals: number');
-    console.log('');
-    console.log('logoURI and tags will be auto-generated.');
-    console.log('');
-    console.log('Available chain IDs:');
-    Object.entries(CHAIN_IDS).forEach(([name, id]) => {
-      console.log(`  ${name}: ${id}`);
-    });
-    process.exit(0);
+    // Default: fetch live from the xStocks API
+    fetchAllAssets()
+      .then(assets => {
+        console.log(`Fetched ${assets.length} assets from API`);
+        const tokens = transformAssetsToTokens(assets);
+        console.log(`Transformed to ${tokens.length} token entries\n`);
+        replaceTokens(tokens);
+      })
+      .catch(err => {
+        console.error('Failed to fetch from API:', err.message);
+        process.exit(1);
+      });
+  } else {
+    // Accept a local JSON file as an override (API-format or flat token list)
+    const newTokensPath = args[0];
+    const data = JSON.parse(fs.readFileSync(newTokensPath, 'utf8'));
+    const newTokens = Array.isArray(data) && data[0] && data[0].deployments
+      ? transformAssetsToTokens(data)
+      : data;
+    replaceTokens(newTokens);
   }
-
-  const newTokensPath = args[0];
-  const newTokens = JSON.parse(fs.readFileSync(newTokensPath, 'utf8'));
-
-  replaceTokens(newTokens);
 }
 
-module.exports = { updateTokenList, replaceTokens, calculateVersionBump, CHAIN_IDS };
+module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, transformAssetsToTokens, CHAIN_IDS };

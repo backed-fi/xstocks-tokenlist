@@ -2,21 +2,29 @@
 
 Token list for xStocks tokenized assets, following the [Uniswap Token Lists](https://github.com/Uniswap/token-lists) specification.
 
-> **Note:** To update the token list, run `npm run update`. This currently reads from `public_atomic_tokenlist.json`. In the future, tokens will be fetched directly from the xStocks API v2 `/assets` endpoint.
+> **Note:** To update the token list, run `npm run update`. This fetches live data from the xStocks API v2 `/assets` endpoint (`https://api.xstocks.fi/api/v2/public/assets`). A local file path can also be passed as an argument for offline overrides.
 
 ## Token Statistics
 
 | Network | Tokens |
 |---------|--------|
-| Ethereum | 63 |
-| Ink | 62 |
+| Ethereum | 98 |
+| Ink | 97 |
+| Mantle | 92 |
+| Arbitrum | 83 |
+| HyperEVM | 83 |
+| BinanceSmartChain | 78 |
 |---------|--------|
-| **Total** | **125** |
+| **Total** | **531** |
 
 ### Network Coverage Gaps
 
-Unique symbols: 63
+Unique symbols: 98
 
+- **BinanceSmartChain** missing 20: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx, PPLTx, PALLx, COPXx, BTGOx, SLVx
+- **Arbitrum** missing 15: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
+- **HyperEVM** missing 15: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
+- **Mantle** missing 6: ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx
 - **Ink** missing 1: SLVx
 
 
