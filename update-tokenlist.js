@@ -51,6 +51,39 @@ function transformAssetsToTokens(assets) {
   return tokens;
 }
 
+async function checkLogoURIs(tokens) {
+  const uniqueLogos = new Map();
+  for (const token of tokens) {
+    if (!uniqueLogos.has(token.symbol)) {
+      uniqueLogos.set(token.symbol, token.logoURI);
+    }
+  }
+
+  console.log(`\nChecking ${uniqueLogos.size} logo URIs...`);
+
+  const results = await Promise.all(
+    [...uniqueLogos.entries()].map(async ([symbol, url]) => {
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return { symbol, url, ok: response.ok, status: response.status };
+      } catch (err) {
+        return { symbol, url, ok: false, status: 'network error' };
+      }
+    })
+  );
+
+  const broken = results.filter(r => !r.ok).sort((a, b) => a.symbol.localeCompare(b.symbol));
+
+  if (broken.length === 0) {
+    console.log('All logo URIs are valid.');
+  } else {
+    console.log(`\n=== Broken Logo URIs (${broken.length}) ===`);
+    broken.forEach(b => console.log(`  ${b.symbol} (HTTP ${b.status}): ${b.url}`));
+  }
+
+  return broken;
+}
+
 const TOKENLIST_PATH = path.join(__dirname, 'tokenlist.json');
 const SCHEMA_PATH = path.join(__dirname, 'node_modules/@uniswap/token-lists/src/tokenlist.schema.json');
 
@@ -242,9 +275,9 @@ function analyzeNetworkCoverage(tokens) {
 }
 
 /**
- * Update README.md with current token statistics
+ * Update README.md with current token statistics and broken logo URIs
  */
-function updateReadme(tokens) {
+function updateReadme(tokens, brokenLogos = []) {
   const readmePath = path.join(__dirname, 'README.md');
 
   if (!fs.existsSync(readmePath)) {
@@ -280,7 +313,6 @@ function updateReadme(tokens) {
     coverageSection = '\n\n### Network Coverage Gaps\n\n';
     coverageSection += `Unique symbols: ${totalSymbols}\n\n`;
 
-    // Sort networks by number of missing tokens (most missing first)
     const sortedNetworks = Object.entries(missingByNetwork)
       .sort((a, b) => b[1].length - a[1].length);
 
@@ -290,20 +322,29 @@ function updateReadme(tokens) {
     }
   }
 
-  // Replace the statistics table in README (handle both \n and \r\n line endings)
-  // Match up to either the next ## section or end of coverage gaps section
-  // Note: table may have optional separator row before Total
-  const statsPattern = /## Token Statistics\r?\n\r?\n\| Network \| Tokens \|\r?\n\|[-]+\|[-]+\|\r?\n[\s\S]*?(\|[-]+\|[-]+\|\r?\n)?\| \*\*Total\*\* \| \*\*\d+\*\* \|(\r?\n\r?\n### Network Coverage Gaps\r?\n\r?\n[\s\S]*?(?=\r?\n\r?\n##|\r?\n\r?\n$|$))?/;
+  // Build broken logo URIs section
+  let brokenSection = '';
+  if (brokenLogos.length > 0) {
+    brokenSection = '\n\n### Broken Logo URIs\n\n';
+    brokenLogos.forEach(b => {
+      brokenSection += `- **${b.symbol}**: ${b.url}\n`;
+    });
+  }
+
+  // Replace the statistics table in README (handle both \n and \r\n line endings).
+  // The coverage gaps lookahead stops before Broken Logo URIs so both sections
+  // are consumed and rewritten together in a single pass.
+  const statsPattern = /## Token Statistics\r?\n\r?\n\| Network \| Tokens \|\r?\n\|[-]+\|[-]+\|\r?\n[\s\S]*?(\|[-]+\|[-]+\|\r?\n)?\| \*\*Total\*\* \| \*\*\d+\*\* \|(\r?\n\r?\n### Network Coverage Gaps\r?\n\r?\n[\s\S]*?(?=\r?\n\r?\n##|\r?\n\r?\n### Broken Logo URIs|\r?\n\r?\n$|$))?(\r?\n\r?\n### Broken Logo URIs\r?\n\r?\n[\s\S]*?(?=\r?\n\r?\n##|\r?\n\r?\n$|$))?/;
 
   if (statsPattern.test(readme)) {
-    readme = readme.replace(statsPattern, `## Token Statistics\n\n${statsTable}${coverageSection}`);
+    readme = readme.replace(statsPattern, `## Token Statistics\n\n${statsTable}${coverageSection}${brokenSection}`);
     fs.writeFileSync(readmePath, readme);
     console.log('Updated README.md');
   } else {
     console.log('Token Statistics section not found in README.md, skipping update');
   }
 
-  // Also log coverage gaps to console
+  // Log coverage gaps to console
   if (Object.keys(missingByNetwork).length > 0) {
     console.log('\n=== Network Coverage Gaps ===');
     console.log(`Unique symbols: ${totalSymbols}`);
@@ -374,7 +415,7 @@ function appendChangelog(version, summary, timestamp) {
  * @param {Array} newTokens - Array of token objects with at minimum: chainId, address, name, symbol, decimals
  *                            logoURI and tags will be auto-generated if not provided
  */
-function updateTokenList(newTokens) {
+async function updateTokenList(newTokens) {
   // Read current tokenlist
   const tokenlist = JSON.parse(fs.readFileSync(TOKENLIST_PATH, 'utf8'));
   const oldTokens = tokenlist.tokens;
@@ -451,8 +492,9 @@ function updateTokenList(newTokens) {
     appendChangelog(newVersion, summary, tokenlist.timestamp);
   }
 
-  // Update README with current token statistics
-  updateReadme(processedTokens);
+  // Check logo URIs and update README with stats + broken logos in one pass
+  const brokenLogos = await checkLogoURIs(processedTokens);
+  updateReadme(processedTokens, brokenLogos);
 
   return tokenlist;
 }
@@ -462,36 +504,37 @@ function updateTokenList(newTokens) {
  * Usage: node update-tokenlist.js <path-to-new-tokens.json>
  *        OR import and call replaceTokens(newTokensArray)
  */
-function replaceTokens(newTokens) {
+async function replaceTokens(newTokens) {
   return updateTokenList(newTokens);
 }
 
 // CLI usage
 if (require.main === module) {
-  const args = process.argv.slice(2);
+  (async () => {
+    try {
+      const args = process.argv.slice(2);
 
-  if (args.length === 0) {
-    // Default: fetch live from the xStocks API
-    fetchAllAssets()
-      .then(assets => {
+      if (args.length === 0) {
+        // Default: fetch live from the xStocks API
+        const assets = await fetchAllAssets();
         console.log(`Fetched ${assets.length} assets from API`);
         const tokens = transformAssetsToTokens(assets);
         console.log(`Transformed to ${tokens.length} token entries\n`);
-        replaceTokens(tokens);
-      })
-      .catch(err => {
-        console.error('Failed to fetch from API:', err.message);
-        process.exit(1);
-      });
-  } else {
-    // Accept a local JSON file as an override (API-format or flat token list)
-    const newTokensPath = args[0];
-    const data = JSON.parse(fs.readFileSync(newTokensPath, 'utf8'));
-    const newTokens = Array.isArray(data) && data[0] && data[0].deployments
-      ? transformAssetsToTokens(data)
-      : data;
-    replaceTokens(newTokens);
-  }
+        await replaceTokens(tokens);
+      } else {
+        // Accept a local JSON file as an override (API-format or flat token list)
+        const newTokensPath = args[0];
+        const data = JSON.parse(fs.readFileSync(newTokensPath, 'utf8'));
+        const newTokens = Array.isArray(data) && data[0] && data[0].deployments
+          ? transformAssetsToTokens(data)
+          : data;
+        await replaceTokens(newTokens);
+      }
+    } catch (err) {
+      console.error('Error:', err.message);
+      process.exit(1);
+    }
+  })();
 }
 
 module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, transformAssetsToTokens, CHAIN_IDS };
