@@ -28,7 +28,76 @@ async function fetchAllAssets() {
 }
 
 function transformAssetsToTokens(assets) {
-  const tokens = [];
+  // SHEIN xStock (ISIN CH1588660667) is deployed but still Private, so the API
+  // does not return it yet. Seeded here so the list is ready to merge the moment
+  // the IPO goes live; delete this block once the API serves SHEINx, otherwise
+  // these entries will be duplicated.
+  // Solana (Xs8w8HvDjT1DxYeHzhSkRT8wYUahJB9kRC7Fuiic2Hf) is omitted: not in CHAIN_IDS.
+  const tokens = [
+    {
+      chainId: CHAIN_IDS.Ethereum,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.BinanceSmartChain,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.Optimism,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.Mantle,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.HyperEVM,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.Ink,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    },
+    {
+      chainId: CHAIN_IDS.XLayer,
+      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
+      name: 'SHEIN xStock',
+      symbol: 'SHEINx',
+      decimals: XSTOCKS_DECIMALS,
+      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
+      tags: ['xStocks']
+    }
+  ];
 
   for (const asset of assets) {
     for (const deployment of asset.deployments) {
