@@ -2,6 +2,103 @@
 
 All notable changes to the xStocks Token List.
 
+## [7.0.0] - 2026-09-01
+
+### Added
+- SHEINx:Ethereum
+- SHEINx:BinanceSmartChain
+- SHEINx:Optimism
+- SHEINx:Mantle
+- SHEINx:HyperEVM
+- SHEINx:Ink
+- SHEINx:XLayer
+- DRAMx:HyperEVM
+- DRAMx:Ink
+- DRAMx:Ethereum
+- DRAMx:BinanceSmartChain
+- DRAMx:Optimism
+- DRAMx:XLayer
+- DRAMx:Mantle
+- MVLLx:XLayer
+- MVLLx:Optimism
+- MVLLx:Ink
+- MVLLx:HyperEVM
+- MVLLx:Ethereum
+- MVLLx:BinanceSmartChain
+- MVLLx:Mantle
+- MUUx:Optimism
+- MUUx:HyperEVM
+- MUUx:XLayer
+- MUUx:Ink
+- MUUx:Ethereum
+- MUUx:BinanceSmartChain
+- MUUx:Mantle
+- AXTIx:HyperEVM
+- AXTIx:BinanceSmartChain
+- AXTIx:Mantle
+- AXTIx:XLayer
+- AXTIx:Ink
+- AXTIx:Ethereum
+- AXTIx:Optimism
+- DJTx:Mantle
+- DJTx:BinanceSmartChain
+- DJTx:HyperEVM
+- DJTx:Ink
+- DJTx:Ethereum
+- DJTx:Optimism
+- DJTx:XLayer
+- KORUx:Optimism
+- KORUx:HyperEVM
+- KORUx:Ink
+- KORUx:Ethereum
+- KORUx:BinanceSmartChain
+- KORUx:XLayer
+- KORUx:Mantle
+- INTWx:BinanceSmartChain
+- INTWx:Mantle
+- INTWx:HyperEVM
+- INTWx:Ink
+- INTWx:Ethereum
+- INTWx:Optimism
+- INTWx:XLayer
+- SOXSx:HyperEVM
+- SOXSx:Optimism
+- SOXSx:Ink
+- SOXSx:Mantle
+- SOXSx:XLayer
+- SOXSx:Ethereum
+- SOXSx:BinanceSmartChain
+- SNXXx:Ink
+- SNXXx:HyperEVM
+- SNXXx:Ethereum
+- SNXXx:BinanceSmartChain
+- SNXXx:Optimism
+- SNXXx:XLayer
+- SNXXx:Mantle
+- PICOx:Ethereum
+- PICOx:XLayer
+- PICOx:Ink
+- PICOx:HyperEVM
+- PICOx:Optimism
+- PICOx:Mantle
+- PICOx:BinanceSmartChain
+- PICOx:Arbitrum
+
+### Removed
+- WBSx:BinanceSmartChain
+- WBSx:XLayer
+- WBSx:Mantle
+- WBSx:Ethereum
+- WBSx:Ink
+- AVBx:Ethereum
+- AVBx:XLayer
+- AVBx:Ink
+- AVBx:BinanceSmartChain
+- EQRx:Ethereum
+- EQRx:Ink
+- EQRx:XLayer
+- EQRx:BinanceSmartChain
+
 ## [6.0.0] - 2026-08-10
 
 ### Added
